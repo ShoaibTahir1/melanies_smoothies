@@ -30,6 +30,8 @@ if ingredients_list:
         
     for fruit_chosen in ingredients_list:
         ingredients_String += fruit_chosen + ''
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
         # ingredients_String = ' '.join(ingredients_list)
 
     # st.write(ingredients_String)
@@ -47,10 +49,6 @@ if ingredients_list:
         
         st.success('Your Smoothie is ordered!', icon="✅")
 
-# New section to display fruityvice nutrition information
-
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-# st.text(fruityvice_response.json())
-fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
+
 
