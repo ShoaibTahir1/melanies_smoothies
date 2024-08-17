@@ -29,7 +29,7 @@ if ingredients_list:
     ingredients_String = ''
         
     for fruit_chosen in ingredients_list:
-            ingredients_String += fruit_chosen + ''
+            ingredients_String += fruit_chosen + ' '
             fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
             fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
         # ingredients_String = ' '.join(ingredients_list)
